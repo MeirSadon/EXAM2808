@@ -1,0 +1,27 @@
+﻿<Window x:Class="EXAM2808_Exrice3_Web.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EXAM2808_Exrice3_Web"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="221.951" Width="345.122">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="489*"/>
+            <ColumnDefinition Width="28*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="UrlTxtBx" HorizontalAlignment="Left" Height="23" Margin="62,14,0,0" TextWrapping="Wrap" Text="{Binding MyUrl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="244"/>
+        <TextBlock HorizontalAlignment="Left" Margin="24,20,0,0" TextWrapping="Wrap" Text="URL : " VerticalAlignment="Top"/>
+        <Button Content="Start With AsyncAwait" FontSize="12" Command="{Binding StartCommand}" HorizontalAlignment="Left" Margin="24,59,0,0" VerticalAlignment="Top" Width="135"/>
+        <Button x:Name="StartWithDispatcherBtn" Content="Start With Dispatcher" FontSize="12" HorizontalAlignment="Left" Margin="180,59,0,0" VerticalAlignment="Top" Width="135" Click="Button_Click"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="75,108,0,0" TextWrapping="Wrap" Text="Size:" VerticalAlignment="Top"/>
+        <TextBlock x:Name="SizeTxtBlck" HorizontalAlignment="Left" Margin="10,127,0,0" Width="149" TextWrapping="Wrap" Text="{Binding UrlSize, Mode=TwoWay}" VerticalAlignment="Top" TextAlignment="Center"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="241,110,0,0" TextWrapping="Wrap" Text="Time:" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
+        <TextBlock x:Name="TimeTxtBlck" HorizontalAlignment="Left" Margin="180,128,0,0" TextWrapping="Wrap" Text="{Binding ValueOfStopWatch}" Width="147" VerticalAlignment="Top" TextAlignment="Center" Grid.ColumnSpan="2"/>
+
+    </Grid>
+</Window>
